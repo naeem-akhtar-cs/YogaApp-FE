@@ -1,0 +1,15 @@
+services:
+  mehab-fe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # - "443:3000"
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+     
+    environment:
+      - NODE_ENV=development
